@@ -1,3 +1,9 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .firstPic {
   width: 100px;
   float: left;
@@ -11,4 +17,8 @@
 em {
   font-style: normal;
   color: blue;
+}
+
+.synergyPic {
+  width: 100px;
 }
