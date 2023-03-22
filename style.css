@@ -1,0 +1,14 @@
+.firstPic {
+  width: 100px;
+  float: left;
+  margin-right: 10px;
+}
+
+.preach {
+  font-weight: bold;
+}
+
+em {
+  font-style: normal;
+  color: blue;
+}
