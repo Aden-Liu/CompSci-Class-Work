@@ -4,9 +4,9 @@
   box-sizing: border-box;
 }
 
+
 .firstPic {
   width: 100px;
-  float: left;
   margin-right: 10px;
 }
 
@@ -14,11 +14,23 @@
   font-weight: bold;
 }
 
-em {
-  font-style: normal;
-  color: blue;
+.bookPic {
+  width: 100px;
+  border-radius: 50px;
 }
 
-.synergyPic {
-  width: 100px;
+.pageLinks {
+  background-color: blue;
+  float: inline-start;
+  width: 120px;
+}
+
+.links{
+  color: aliceblue;
+  margin: auto;
+  text-decoration: none;
+}
+
+.linkCaption {
+  margin: auto;
 }
