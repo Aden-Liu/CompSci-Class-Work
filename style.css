@@ -20,13 +20,11 @@
 }
 
 .page-links {
-  background-color: blue;
   float: inline-start;
   width: 120px;
 }
 
 .links{
-  color: aliceblue;
   margin: auto;
   text-decoration: none;
 }
