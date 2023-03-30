@@ -10,6 +10,10 @@ h1 {
   text-align: center;
 }
 
+.title-text {
+  text-align: center;
+}
+
 body {
   background-color: lightskyblue;
   background-image: url("images/69753-Clash-Royale-HD-Wallpaper.jpg");
@@ -68,8 +72,9 @@ body {
   position: relative;
   display: grid;
   margin: auto;
-  left: 20%;
-  background-color: gray;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-collapse: collapse;
 }
 
 .listCards {
@@ -83,16 +88,21 @@ body {
   position: relative;
   border-style: solid;
   text-align: center;
-  float: left;
-  clear: left;
   width: 50px;
   height: 60px;
   vertical-align: middle;
+  color: aliceblue;
 }
 
 .tier-box {
-  float: left;
   padding: 5px;
+  border: 5px;
+  border-style: solid;
+  background-color: blue;
+  border-collapse: collapse;
+}
+
+#counters-list {
   border: 5px;
   border-style: solid;
 }
