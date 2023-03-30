@@ -78,8 +78,8 @@ body {
 }
 
 .link-caption {
-  color: white;
-  margin: auto;
+  color: black;
+  text-align: center;
 }
 
 #synergy-tier-list {
@@ -93,32 +93,38 @@ body {
 
 .listCards {
   width: 50px;
-  display: flex;
-  flex-wrap: wrap;
   float: left;
 }
 
 .tier-letter {
   position: relative;
-  border-style: solid;
   text-align: center;
   width: 50px;
   height: 60px;
-  vertical-align: middle;
-  color: aliceblue;
+  color: white;
+  background-color: aqua;
 }
 
 .tier-box {
-  padding: 5px;
   border: 5px;
   border-style: solid;
   background-color: blue;
   border-collapse: collapse;
+  display: flex;
+  flex-wrap: wrap;
 }
 
+#s-letter {
+  color: rebeccapurple;
+}
+
+
 #counters-list {
-  border: 5px;
-  border-style: solid;
+  display: grid;
+  position: relative;
+  border-collapse: collapse;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 #back-button {
