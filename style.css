@@ -101,8 +101,7 @@ body {
   text-align: center;
   width: 50px;
   height: 60px;
-  color: white;
-  background-color: aqua;
+  padding-top: 15px;
 }
 
 .tier-box {
@@ -115,7 +114,23 @@ body {
 }
 
 #s-letter {
-  color: rebeccapurple;
+  background-color: red;
+}
+
+#a-letter {
+  background-color: orange;
+}
+
+#b-letter {
+  background-color: yellow;
+}
+
+#c-letter {
+  background-color: yellowgreen;
+}
+
+#d-letter {
+  background-color: greenyellow;
 }
 
 
