@@ -107,10 +107,15 @@ body {
 .tier-box {
   border: 5px;
   border-style: solid;
-  background-color: blue;
+  background-color: #5882FA;
   border-collapse: collapse;
   display: flex;
   flex-wrap: wrap;
+}
+
+.counter-letter {
+  width: 90px;
+  height: 20px;
 }
 
 #s-letter {
@@ -130,6 +135,18 @@ body {
 }
 
 #d-letter {
+  background-color: greenyellow;
+}
+
+#h-letter {
+  background-color: red;
+}
+
+#s-letter {
+  background-color: yellow;
+}
+
+#g-letter {
   background-color: greenyellow;
 }
 
