@@ -153,6 +153,16 @@ body {
   background-color: greenyellow;
 }
 
+#d-box {
+  border-bottom: 4px;
+  border-style: solid;
+}
+
+#g-box {
+  border-bottom: 4px;
+  border: solid;
+}
+
 #counters-list {
   display: grid;
   position: relative;
