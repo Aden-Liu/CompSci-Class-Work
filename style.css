@@ -89,6 +89,7 @@ body {
   padding-left: 15px;
   padding-right: 15px;
   border-collapse: collapse;
+  border: 3px;
 }
 
 .listCards {
@@ -100,22 +101,24 @@ body {
   position: relative;
   text-align: center;
   width: 50px;
-  height: 60px;
-  padding-top: 15px;
+  display: table-cell;
+  vertical-align: middle;
+  padding-top: 1rem;
 }
 
 .tier-box {
-  border: 5px;
+  border-bottom: 1px;
   border-style: solid;
-  background-color: #5882FA;
+  background-color: #5882fa;
   border-collapse: collapse;
   display: flex;
   flex-wrap: wrap;
 }
 
 .counter-letter {
-  width: 90px;
-  height: 20px;
+  width: 100px;
+  padding: 1rem;
+  text-align: center;
 }
 
 #s-letter {
@@ -142,7 +145,7 @@ body {
   background-color: red;
 }
 
-#s-letter {
+#so-letter {
   background-color: yellow;
 }
 
@@ -150,13 +153,13 @@ body {
   background-color: greenyellow;
 }
 
-
 #counters-list {
   display: grid;
   position: relative;
   border-collapse: collapse;
   padding-left: 15px;
   padding-right: 15px;
+  border: 3px;
 }
 
 #back-button {
