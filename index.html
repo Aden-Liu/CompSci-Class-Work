@@ -7,8 +7,25 @@
     <title>Assignment 3</title>
   </head>
   <body>
+    <form>
+      <label for="movies">Choose a movie</label>
+      <select name="movies" id="movies">
+        <option value="75612">Oblivion</option>
+        <option value="157336">Interstellar</option>
+        <option value="406759">Moonfall</option>
+        <option value="506072">Prospect</option>
+        <option value="158852">Tomorrowland</option>
+        <option value="696806">The Adam Project</option>
+        <option value="588228">The Tomorrow War</option>
+        <option value="286217">The Martian</option>
+        <option value="412656">Chaos Walking</option>
+        <option value="419704">Ad Astra</option>
+      </select>
+      <button id="get-button">Get</button>
+    </form>
+
     <div id="movie"></div>
-    <script type="module" src="./script.js"></script>
+    <script type="module" src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
   </body>
 </html>
