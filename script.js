@@ -20,6 +20,7 @@ function getDetails() {
 }
 
 function createMovieTile(result) {
+  document.getElementById("movie").innerHTML = "";
   let title = document.createElement("h1");
   let poster = document.createElement("img");
   let date = document.createElement("h2");
@@ -30,6 +31,7 @@ function createMovieTile(result) {
   let revenue = document.createElement("h3");
   let tagline = document.createElement("h3");
   let trailer = document.createElement("iframe");
+
   title.innerHTML = `${result.data.title}`;
   poster.src = `https://image.tmdb.org/t/p/w500${result.data.poster_path}`;
   date.innerHTML = `${result.data.release_date}`;
@@ -42,6 +44,7 @@ function createMovieTile(result) {
   trailer.src = `https://www.youtube-nocookie.com/embed/${
     result.data.videos.results.at(0).key
   }`;
+
   page.appendChild(title);
   page.appendChild(poster);
   page.appendChild(date);
@@ -52,8 +55,6 @@ function createMovieTile(result) {
   page.appendChild(revenue);
   page.appendChild(tagline);
   page.appendChild(trailer);
-
-  console.log(result.data.videos.results.at(0).key);
 }
 
 getDetails();
