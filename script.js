@@ -54,9 +54,12 @@ function createMovieTile(result) {
   tagline.setAttribute("class", "info-box");
   voteAverage.innerHTML = `${result.data.vote_average}` + "/10";
   voteAverage.setAttribute("class", "info-box");
-  trailer.src = `https://www.youtube-nocookie.com/embed/${
-    result.data.videos.results.at(0).key
-  }`;
+
+  let trailerData = result.data.videos.results.filter((trailer) => {
+    return trailer.type === "Trailer";
+  })
+
+  trailer.src = `https://www.youtube-nocookie.com/embed/${trailerData.at(0).key}`;
   trailer.setAttribute("id", "trailer-box")
 
   page.appendChild(poster);
