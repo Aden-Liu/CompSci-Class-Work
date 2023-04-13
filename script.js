@@ -23,30 +23,44 @@ function createMovieTile(result) {
   document.getElementById("movie").innerHTML = "";
   let title = document.createElement("h1");
   let poster = document.createElement("img");
-  let date = document.createElement("h2");
+  let date = document.createElement("h3");
   let synopsis = document.createElement("p");
-  let budget = document.createElement("h2");
-  let runtime = document.createElement("h2");
+  let budget = document.createElement("h3");
+  let runtime = document.createElement("h3");
   let popularity = document.createElement("h3");
   let revenue = document.createElement("h3");
   let tagline = document.createElement("h3");
+  let voteAverage = document.createElement("h3");
   let trailer = document.createElement("iframe");
 
   title.innerHTML = `${result.data.title}`;
+  title.setAttribute("class", "details-box");
+  title.setAttribute("id", "title-box");
   poster.src = `https://image.tmdb.org/t/p/w500${result.data.poster_path}`;
-  date.innerHTML = `${result.data.release_date}`;
+  poster.setAttribute("id", "movie-poster");
+  date.innerHTML = "Released: " + `${result.data.release_date}`;
+  date.setAttribute("class", "info-box");
   synopsis.innerHTML = `${result.data.overview}`;
-  budget.innerHTML = `${result.data.budget}`;
-  runtime.innerHTML = `${result.data.runtime}`;
-  popularity.innerHTML = `${result.data.popularity}`;
-  revenue.innerHTML = `${result.data.revenue}`;
+  synopsis.setAttribute("class", "info-box");
+  budget.innerHTML = "Budget: $" + `${result.data.budget}`;
+  budget.setAttribute("class", "info-box");
+  revenue.innerHTML = "Revenue: $" + `${result.data.revenue}`;
+  revenue.setAttribute("class", "info-box");
+  runtime.innerHTML = "Runtime: " + `${result.data.runtime}` + " Minutes";
+  runtime.setAttribute("class", "info-box");
+  popularity.innerHTML = "Popularity: " + `${result.data.popularity}`;
+  popularity.setAttribute("class", "info-box");
   tagline.innerHTML = `${result.data.tagline}`;
+  tagline.setAttribute("class", "info-box");
+  voteAverage.innerHTML = `${result.data.vote_average}` + "/10";
+  voteAverage.setAttribute("class", "info-box");
   trailer.src = `https://www.youtube-nocookie.com/embed/${
     result.data.videos.results.at(0).key
   }`;
+  trailer.setAttribute("id", "trailer-box")
 
-  page.appendChild(title);
   page.appendChild(poster);
+  page.appendChild(title);
   page.appendChild(date);
   page.appendChild(synopsis);
   page.appendChild(budget);
@@ -54,6 +68,7 @@ function createMovieTile(result) {
   page.appendChild(popularity);
   page.appendChild(revenue);
   page.appendChild(tagline);
+  page.appendChild(voteAverage);
   page.appendChild(trailer);
 }
 
