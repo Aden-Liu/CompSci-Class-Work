@@ -1,5 +1,3 @@
-import { tmdbKey } from "./key.js";
-
 let page = document.getElementById("movie");
 let choices = [
   75612, 157336, 406759, 506072, 158852, 696806, 588228, 286217, 412656, 419704,
@@ -10,7 +8,7 @@ function getDetails() {
     method: "get",
     url: `https://api.themoviedb.org/3/movie/${
       choices[document.getElementById("movies").selectedIndex]
-    }?api_key=${tmdbKey}&language=en-US&append_to_response=videos`,
+    }?api_key=186585b7b6aff9c8ea3b6e64e18c88f0&language=en-US&append_to_response=videos`,
   })
     .then((result) => {
       console.log(result);
