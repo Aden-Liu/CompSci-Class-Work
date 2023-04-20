@@ -7,32 +7,34 @@
 }
 
 body {
-    background-color: #1B998B;
+  background-color: #1b998b;
 }
 
 #movie {
-    border: 5px;
-    border-style: solid;
-    margin: 1%;
-    border-color: #534D56;
-    background-color: #DECDF5;
+  border: 5px;
+  border-style: solid;
+  margin: 1%;
+  border-color: #534d56;
+  background-color: #decdf5;
 }
 
 #movie-poster {
   float: left;
   width: 250px;
   margin: 1%;
+  border: 2px;
+  border-style: solid;
 }
 
 .info-box {
-    padding: 0.1%;
+  padding: 0.1%;
 }
 
 #movie-select {
-    text-align: center;
-    margin: 1%;
-    padding: 1%;
-    border: 3px;
-    border-style: solid;
-    background-color: aliceblue;
+  text-align: center;
+  margin: 1%;
+  padding: 1%;
+  border: 3px;
+  border-style: solid;
+  background-color: aliceblue;
 }

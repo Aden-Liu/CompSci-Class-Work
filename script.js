@@ -31,6 +31,7 @@ function createMovieTile(result) {
   let revenue = document.createElement("h3");
   let tagline = document.createElement("p");
   let voteAverage = document.createElement("h3");
+  let voteCount = document.createElement("h3")
   let trailer = document.createElement("iframe");
 
   title.innerHTML = `${result.data.title}`;
@@ -52,15 +53,19 @@ function createMovieTile(result) {
   popularity.setAttribute("class", "info-box");
   tagline.innerHTML = `"${result.data.tagline}"`;
   tagline.setAttribute("class", "info-box");
-  voteAverage.innerHTML = `${result.data.vote_average}/10`;
+  voteAverage.innerHTML = `Rating: ${result.data.vote_average}/10`;
   voteAverage.setAttribute("class", "info-box");
+  voteCount.innerHTML = `# of Ratings: ${result.data.vote_count}`;
+  voteCount.setAttribute("class", "info-box");
 
   let trailerData = result.data.videos.results.filter((trailer) => {
     return trailer.type === "Trailer";
-  })
+  });
 
-  trailer.src = `https://www.youtube-nocookie.com/embed/${trailerData.at(0).key}`;
-  trailer.setAttribute("id", "trailer-box")
+  trailer.src = `https://www.youtube-nocookie.com/embed/${
+    trailerData.at(0).key
+  }`;
+  trailer.setAttribute("id", "trailer-box");
 
   page.appendChild(poster);
   page.appendChild(title);
@@ -72,6 +77,7 @@ function createMovieTile(result) {
   page.appendChild(popularity);
   page.appendChild(revenue);
   page.appendChild(voteAverage);
+  page.appendChild(voteCount);
   page.appendChild(trailer);
 }
 
