@@ -27,7 +27,7 @@ body {
 }
 
 .info-box {
-  padding: 0.1%;
+  margin: 0.1%;
 }
 
 #movie-select {
@@ -37,4 +37,12 @@ body {
   border: 3px;
   border-style: solid;
   background-color: aliceblue;
+}
+
+#get-button {
+  padding: 0.1%;
+}
+
+#title-box {
+  margin-top: 0.3%;
 }
