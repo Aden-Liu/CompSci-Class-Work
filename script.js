@@ -65,9 +65,7 @@ function createMovieTile(result) {
     return trailer.type === "Trailer";
   });
 
-  trailer.src = `https://www.youtube-nocookie.com/embed/${
-    trailerData.at(0).key
-  }`;
+  trailer.src = `https://www.youtube.com/embed/${trailerData.at(0).key}`;
   trailer.setAttribute("id", "trailer-box");
 
   page.appendChild(poster);
