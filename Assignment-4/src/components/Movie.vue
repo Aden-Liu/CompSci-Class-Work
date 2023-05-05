@@ -1,9 +1,10 @@
 <script setup>
-import {apiKey} from "./key.js";
+import { apiKey } from "./key.js";
 import axios from "axios";
+import { ref } from 'vue';
 
 function getMovieID() {
-  let movieID = parseInt(document.getElementById('movies').value);
+  let movieID = parseInt(document.getElementById("movies").value);
   return movieID;
 }
 
@@ -23,7 +24,7 @@ async function getDetails() {
 
 function createMovieTile(result) {
   document.getElementById("movie").innerHTML = "";
-  let page = document.getElementById("movie");
+  let page = ref("tile");
   let title = document.createElement("h1");
   let poster = document.createElement("img");
   let date = document.createElement("h3");
@@ -100,56 +101,7 @@ function createMovieTile(result) {
     </select>
     <button id="get-button" type="button" @click="getDetails()">Get</button>
   </form>
-  <div id="movie"></div>
+  <div id="movie" ref="tile"></div>
 </template>
 
-<style scoped>
-* {
-  padding: 0px;
-  margin: 0px;
-  box-sizing: border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
-
-template {
-  background-color: #1b998b;
-}
-
-#movie {
-  border: 5px;
-  border-style: solid;
-  margin: 1%;
-  border-color: #534d56;
-  background-color: #decdf5;
-}
-
-#movie-poster {
-  float: left;
-  width: 250px;
-  margin: 1%;
-  border: 3px;
-  border-style: solid;
-}
-
-.info-box {
-  margin: 0.1%;
-}
-
-#movie-select {
-  text-align: center;
-  margin: 1%;
-  padding: 1%;
-  border: 3px;
-  border-style: solid;
-  background-color: aliceblue;
-}
-
-#get-button {
-  padding: 0.1%;
-}
-
-#title-box {
-  margin-top: 0.3%;
-}
-</style>
+<style scoped></style>
