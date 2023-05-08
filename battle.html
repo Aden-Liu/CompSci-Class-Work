@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Hamlet vs Fortinbras</title>
+  </head>
+  <body id="get-bodied">
+    <img
+      class="profile"
+      id="hamlet-profile"
+      src="images/Hamlet.png"
+      alt="Hamlet Picture"
+    />
+    <div id="hamlet-health" class="health-bar">
+      <h3 class="name">Hamlet</h3>
+      <h3 id="hamlet-health-bar"></h3>
+    </div>
+
+    <img
+      class="profile"
+      id="fortinbras-profile"
+      src="images/Claudius.png"
+      alt="Fortinbras Picture"
+    />
+    <div id="fortinbras-health" class="health-bar">
+      <h3 class="name">Fortinbras</h3>
+      <h3 id="fortinbras-health-bar"></h3>
+    </div>
+
+    <div id="attack-box">
+      <button class="move-button" type="button" onclick="attack()">
+        Attack
+      </button>
+      <button class="move-button" type="button" onclick="defend()">
+        Defend
+      </button>
+      <button class="move-button" type="button" onclick="skill()">Skill</button>
+      <button class="move-button" type="button" onclick="run()">Run</button>
+    </div>
+    <div id="dialogue-box"></div>
+  </body>
+</html>

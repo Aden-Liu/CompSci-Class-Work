@@ -1,0 +1,105 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(images/snowy-plains-and-mountains.jpg);
+}
+
+#start-button {
+  text-decoration: none;
+}
+
+.profile {
+  width: 250px;
+}
+
+.name {
+  float: left;
+  margin-right: 5px;
+}
+
+.profile {
+  display: block;
+  position: relative;
+  margin: auto;
+}
+
+.name {
+  margin-left: 30px;
+}
+
+.health-bar {
+  text-align: center;
+  position: relative;
+  background-color: aliceblue;
+  border: 3px;
+  border-style: solid;
+  width: 500px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+#hamlet-profile {
+  right: 300px;
+  top: 300px;
+}
+
+#hamlet-health {
+  margin: auto;
+  top: 20px;
+  left: 200px;
+}
+
+#fortinbras-profile {
+  bottom: 400px;
+  left: 250px;
+}
+
+#fortinbras-health {
+  margin: auto;
+  right: 250px;
+  width: 500px;
+  bottom: 700px;
+}
+
+#attack-box {
+  position: relative;
+  margin: auto;
+  width: 500px;
+  background-color: aliceblue;
+  border: 3px;
+  border-style: solid;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  left: 200px;
+  bottom: 380px;
+}
+
+.move-button {
+  margin-right: 20px;
+  margin-left: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: cornflowerblue;
+  width: 80px;
+}
+
+.gameover-box {
+  position: relative;
+  background-color: aliceblue;
+  text-align: center;
+  padding: 300px;
+  bottom: 900px;
+}
+
+.box {
+  text-align: center;
+  position: relative;
+  bottom: 500px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: aliceblue;
+}
