@@ -3,41 +3,29 @@ import { apiKey } from "./key.js";
 import axios from "axios";
 import { ref } from "vue";
 
-// function getMovieID() {
-//   let movieID = parseInt(document.getElementById("movies").value);
-//   return movieID;
-// }
-
-// async function getDetails() {
-//   await axios({
-//     method: "get",
-//     url: `https://api.themoviedb.org/3/movie/${getMovieID()}?api_key=${apiKey}&language=en-US&append_to_response=videos`,
-//   })
-//     .then((result) => {
-//       console.log(result);
-//       createMovieTile(result);
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//     });
-
 export default {
   setup() {
     let movieSelect = ref("75612");
     let movieData = ref(null);
+    let trailerData = ref(null);
 
     const getDetails = async () => {
-      const result = await axios.get(`https://api.themoviedb.org/3/movie/${movieSelect.value}?api_key=${apiKey}&language=en-US&append_to_response=videos`);
-      movieData.value = result.data;
-    }
-
+      const result = await axios.get(
+        `https://api.themoviedb.org/3/movie/${movieSelect.value}?api_key=${apiKey}&language=en-US&append_to_response=videos`
+      );
+      movieData.value = result;
+      trailerData = result.data.videos.reults.filter((trailer) => {
+        return trailer.type === "Trailer";
+      });
+    };
     return {
       movieSelect,
       movieData,
-      getDetails
-    }
+      trailerData,
+      getDetails,
+    };
   },
-}
+};
 </script>
 
 <template>
@@ -57,8 +45,72 @@ export default {
     </select>
     <button id="get-button" type="button" @click="getDetails">Get</button>
   </form>
-  <div id="movie" ref="tile">
+  <div v-if="movieData" id="movie">
+    <img
+      id="movie-poster"
+      :src="`https://image.tmdb.org/t/p/w500${movieData.data.poster_path}`"
+      alt="Movie Poster"
+    />
+    <h1 class="info-box">{{ movieData.data.title }}</h1>
+    <h3 class="info-box">{{ movieData.data.release_date }}</h3>
+    <p class="info-box">{{ movieData.data.overview }}</p>
+    <p class="info-box">{{ movieData.data.tagline }}</p>
+    <h3 class="info-box">Budget: {{ movieData.data.budget }}</h3>
+    <h3 class="info-box">Revenue{{ movieData.data.revenue }}</h3>
+    <h3 class="info-box">Runtime {{ movieData.data.runtime }} Minutes</h3>
+    <h3 class="info-box">Popularity: {{ movieData.data.popularity }}</h3>
+    <h3 class="info-box">Rating: {{ movieData.data.vote_average }}</h3>
+    <h3 class="info-box"># of Reviews: {{ movieData.data.vote_count }}</h3>
+    <iframe
+      :src="`https://www.youtube.com/embed/${trailerData}`"
+      frameborder="0"
+    ></iframe>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+#movie {
+  border: 5px;
+  border-style: solid;
+  margin: 1%;
+  border-color: #534d56;
+  background-color: #decdf5;
+}
+
+#movie-poster {
+  float: left;
+  width: 250px;
+  margin: 1%;
+  border: 3px;
+  border-style: solid;
+}
+
+.info-box {
+  margin: 0.1%;
+}
+
+#movie-select {
+  text-align: center;
+  margin: 1%;
+  padding: 1%;
+  border: 3px;
+  border-style: solid;
+  background-color: aliceblue;
+}
+
+#get-button {
+  padding: 0.1%;
+}
+
+#title-box {
+  margin-top: 0.3%;
+}
+</style>
