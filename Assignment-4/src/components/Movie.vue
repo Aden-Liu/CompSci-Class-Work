@@ -1,36 +1,23 @@
-<script>
+<script setup>
 import { apiKey } from "./key.js";
 import axios from "axios";
 import { ref } from "vue";
 
-export default {
-  setup() {
-    let movieSelect = ref("75612");
-    let movieData = ref(null);
-    let trailerData = ref(null);
+let movieSelect = ref(75612);
+let movieData = ref(null);
 
-    const getDetails = async () => {
-      const result = await axios.get(
-        `https://api.themoviedb.org/3/movie/${movieSelect.value}?api_key=${apiKey}&language=en-US&append_to_response=videos`
-      );
-      movieData.value = result;
-      trailerData = result.data.videos.reults.filter((trailer) => {
-        return trailer.type === "Trailer";
-      });
-    };
-    return {
-      movieSelect,
-      movieData,
-      trailerData,
-      getDetails,
-    };
-  },
+const getDetails = async () => {
+  const result = await axios.get(
+    `https://api.themoviedb.org/3/movie/${movieSelect.value}?api_key=${apiKey}&language=en-US&append_to_response=videos`
+  );
+  console.log(result);
+  movieData.value = result;
 };
 </script>
 
 <template>
   <form id="movie-select">
-    <label for="movies">Choose a movie</label>
+    <label for="movies">Choose a movie: </label>
     <select v-model="movieSelect" id="movies">
       <option value="75612">Oblivion</option>
       <option value="157336">Interstellar</option>
@@ -45,6 +32,7 @@ export default {
     </select>
     <button id="get-button" type="button" @click="getDetails">Get</button>
   </form>
+
   <div v-if="movieData" id="movie">
     <img
       id="movie-poster"
@@ -62,7 +50,7 @@ export default {
     <h3 class="info-box">Rating: {{ movieData.data.vote_average }}</h3>
     <h3 class="info-box"># of Reviews: {{ movieData.data.vote_count }}</h3>
     <iframe
-      :src="`https://www.youtube.com/embed/${trailerData}`"
+      :src="`https://www.youtube.com/embed/${movieData.data.videos.results.filter((trailer) => trailer.type === 'Trailer').at(0).key}`"
       frameborder="0"
     ></iframe>
   </div>
