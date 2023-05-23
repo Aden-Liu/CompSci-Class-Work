@@ -1,10 +1,10 @@
 <script setup>
-import { apiKey } from "./key.js";
 import axios from "axios";
 import { ref } from "vue";
 
 let movieSelect = ref(75612);
 let movieData = ref(null);
+const apiKey = import.meta.env.VITE_TMDB_API_KEY;
 
 const getDetails = async () => {
   const result = await axios.get(
@@ -44,14 +44,14 @@ const getDetails = async () => {
     <p class="info-box">{{ movieData.data.overview }}</p>
     <p class="info-box">{{ movieData.data.tagline }}</p>
     <h3 class="info-box">Budget: {{ movieData.data.budget }}</h3>
-    <h3 class="info-box">Revenue{{ movieData.data.revenue }}</h3>
-    <h3 class="info-box">Runtime {{ movieData.data.runtime }} Minutes</h3>
+    <h3 class="info-box">Revenue: {{ movieData.data.revenue }}</h3>
+    <h3 class="info-box">Runtime: {{ movieData.data.runtime }} Minutes</h3>
     <h3 class="info-box">Popularity: {{ movieData.data.popularity }}</h3>
     <h3 class="info-box">Rating: {{ movieData.data.vote_average }}</h3>
     <h3 class="info-box"># of Reviews: {{ movieData.data.vote_count }}</h3>
     <iframe
       :src="`https://www.youtube.com/embed/${movieData.data.videos.results.filter((trailer) => trailer.type === 'Trailer').at(0).key}`"
-      frameborder="0"
+      frameborder="1"
     ></iframe>
   </div>
 </template>
