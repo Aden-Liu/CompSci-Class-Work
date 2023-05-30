@@ -18,5 +18,9 @@ export const router = createRouter({
       path: "/purchase",
       component: PurchasePage,
     },
+    {
+      path: "/cart",
+      component: CartPage,
+    }
   ],
 });

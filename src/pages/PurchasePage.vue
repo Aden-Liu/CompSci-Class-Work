@@ -1,5 +1,14 @@
 <script setup>
 import axios from "axios";
+import Modal from "../components/Modal.vue";
+import { useRouter } from "vue-router";
+import { useStore } from "../store";
+
+const router = useRouter();
+const store = useStore();
+const modalView = ref(false);
+const selectedID = ref(null);
+
 
 const movieData = (
   await axios.get("https://api.themoviedb.org/3/movie/popular", {
@@ -12,19 +21,20 @@ const movieData = (
   })
 ).data;
 
-console.log(movieData);
+const showModal = () => {
+  show
+}
 </script>
 
 <template>
   <div v-if="movieData" class="tiles">
     <div v-for="movie in movieData.results" class="info-container">
-    <h1>{{ movie.title }}</h1>
       <img
         class="movie-poster"
         :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`"
         alt="movie poster"
+        @click="showModal(movie.id)"
       />
-      <h3>{{ movie.release_date }}</h3>
     </div>
   </div>
 </template>
