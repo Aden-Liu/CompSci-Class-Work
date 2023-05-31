@@ -3,11 +3,12 @@ import axios from "axios";
 import Modal from "../components/Modal.vue";
 import { useRouter } from "vue-router";
 import { useStore } from "../store";
+import { ref } from "vue";
 
 const router = useRouter();
 const store = useStore();
-let modalView = ref(false);
-let selectedID = ref(null);
+const modalView = ref(false);
+let selectedID = ref(0);
 
 const movieData = (
   await axios.get("https://api.themoviedb.org/3/movie/popular", {
@@ -21,7 +22,7 @@ const movieData = (
 ).data;
 
 const showModal = (movieID) => {
-  modalView = !modalView;
+  modalView.value = !modalView.value;
   selectedID.value = movieID;
 };
 </script>
@@ -30,7 +31,7 @@ const showModal = (movieID) => {
   <div>
     <button type="button" @click="router.push('/cart')">Cart</button>
     <div v-if="movieData" class="tiles">
-      <div v-for="movie in movieData.results" class="info-container">
+      <div v-for="movie in store.movies" class="info-container">
         <img
           class="movie-poster"
           :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`"
@@ -40,7 +41,7 @@ const showModal = (movieID) => {
       </div>
     </div>
   </div>
-  <Modal v-if="showModal" :id="selectedID" @showModal="showModal"/>
+  <Modal v-if="showModal" :id="selectedID" @showModal="showModal" />
 </template>
 
 <style scoped></style>
