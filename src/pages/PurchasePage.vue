@@ -18,7 +18,9 @@ const showModal = (movieID) => {
 
 <template>
   <div>
-    <button type="button" @click="router.push('/cart')">Cart</button>
+    <header>
+      <button class="cart-button" @click="router.push('/cart')">Cart</button>
+    </header>
     <div v-if="store.movies" class="tiles">
       <div v-for="movie in store.movies" class="movie-container">
         <img
@@ -35,11 +37,39 @@ const showModal = (movieID) => {
 
 <style scoped>
 img {
-  width: 250px;
+  width: 85%;
+  border-radius: 7px;
+  margin: 0.5rem;
 }
 
 .tiles {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  padding-top: 55px;
+}
+
+header {
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 7px;
+  padding-right: 7px;
+  border-bottom: 4px solid;
+  background-color: white;
+  top: 0px;
+  width: 100%;
+}
+
+.cart-button {
+  margin: 10px;
+  padding: 7px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-weight: bold;
+  background-color: blueviolet;
+  color: white;
+  border: none;
+  border-radius: 4px;
 }
 </style>

@@ -21,15 +21,21 @@ const movieData = (
   <Teleport to="body">
     <div class="modal-outer" @click.self="$emit('showModal')">
       <div class="modal-inner">
-        <button type="button" @click="$emit('showModal')">X</button>
+        <button class="exit-button" type="button" @click="$emit('showModal')">
+          X
+        </button>
         <div v-if="movieData">
           <img
             :src="`https://image.tmdb.org/t/p/w500/${movieData.poster_path}`"
             alt="Movie Poster"
           />
           <h1>{{ movieData.title }}</h1>
-          <h2>{{ movieData.release_date }}</h2>
+          <h3>{{ movieData.release_date }}</h3>
+          <p>{{ movieData.overview }}</p>
+          <h3>Rating: {{ movieData.vote_average }}/10</h3>
+          <h3>Vote Count: {{ movieData.vote_count }}</h3>
           <button
+            class="cart-button"
             type="button"
             @click="store.addToCart(movieData.poster_path, movieData.title)"
           >
@@ -55,10 +61,44 @@ const movieData = (
 }
 
 .modal-inner {
+  position: relative;
   background-color: white;
+  padding: 5px;
+  width: 50vw;
+  border-radius: 7px;
+  border: 2px solid;
 }
 
 img {
-  width: 25vw;
+  width: 20vw;
+  border-radius: 7px;
+  margin: 1rem;
+  float: left;
+}
+
+button {
+  margin: 4px;
+  position: absolute;
+  border: none;
+  background-color: blueviolet;
+  font-weight: bold;
+  color: white;
+  border-radius: 4px;
+}
+
+.exit-button {
+  padding: 2px;
+  padding-left: 6px;
+  padding-right: 6px;
+  top: 0;
+  right: 0;
+}
+
+.cart-button {
+  padding: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  bottom: 0;
+  right: 0;
 }
 </style>
