@@ -14,12 +14,15 @@ const router = useRouter();
 <style scoped>
 .header-container {
   display: flex;
-  position: sticky;
+  position: fixed;
   justify-content: space-between;
   align-items: center;
   padding-left: 7px;
   padding-right: 7px;
   border-bottom: 4px solid;
+  background-color: white;
+  top: 0px;
+  width: 100%;
 }
 
 button {
