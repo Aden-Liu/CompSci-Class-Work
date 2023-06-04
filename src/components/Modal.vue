@@ -19,7 +19,7 @@ const movieData = (
 
 <template>
   <Teleport to="body">
-    <div class="modal-outer">
+    <div class="modal-outer" @click.self="$emit('showModal')">
       <div class="modal-inner">
         <button type="button" @click="$emit('showModal')">X</button>
         <div v-if="movieData">

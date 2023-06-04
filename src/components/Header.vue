@@ -5,10 +5,24 @@ const router = useRouter();
 </script>
 
 <template>
-  <div id="header-container">
+  <div class="header-container">
     <h1>WASD Inc.</h1>
     <button @click="router.push('/login')">Login</button>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.header-container {
+  display: flex;
+  position: sticky;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 7px;
+  padding-right: 7px;
+  border-bottom: 4px solid;
+}
+
+button {
+  padding: 8px;
+}
+</style>
