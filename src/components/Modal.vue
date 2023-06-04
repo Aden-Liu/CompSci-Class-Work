@@ -79,7 +79,6 @@ img {
 button {
   margin: 4px;
   position: absolute;
-  border: none;
   background-color: blueviolet;
   font-weight: bold;
   color: white;

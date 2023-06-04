@@ -51,7 +51,6 @@ img {
 header {
   display: flex;
   position: fixed;
-  justify-content: space-between;
   align-items: center;
   padding-left: 7px;
   padding-right: 7px;
@@ -69,7 +68,6 @@ header {
   font-weight: bold;
   background-color: blueviolet;
   color: white;
-  border: none;
   border-radius: 4px;
 }
 </style>

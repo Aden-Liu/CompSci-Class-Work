@@ -27,5 +27,9 @@ const router = useRouter();
 
 button {
   padding: 8px;
+  background-color: purple;
+  color: white;
+  font-weight: bold;
+  border-radius: 4px;
 }
 </style>
